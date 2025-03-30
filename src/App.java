@@ -69,6 +69,101 @@ public class App {
         Player player = new Player(nama);
         System.out.println("Selamat datang, " + player.nama);
         Kangsihir enemyKangsihir = new Kangsihir();
-        runGame(player, enemyKangsihir, scanI, rand);
+        Maklampir enemyMaklampir = new Maklampir();
+        Aingmaung enemyAingmaung = new Aingmaung();
+        Dotsedhot enemyDotsedhot = new Dotsedhot();
+        Shappider enemyShappider = new Shappider();
+        Boolean isLose = false;
+        Boolean isWin = false;
+        int ctr = 0;
+        do {
+            int randEnemy;
+            Boolean isFinish = true;
+            do {
+                randEnemy = rand.nextInt(5);
+                if(randEnemy == 0){
+                    if(enemyKangsihir.life != 0){
+                        isFinish = false;
+                        break;
+                    }
+                } else if(randEnemy == 1){
+                    if(enemyMaklampir.life != 0){
+                        isFinish = false;
+                        break;
+                    }
+                } else if(randEnemy == 2){
+                    if(enemyAingmaung.life != 0){
+                        isFinish = false;
+                        break;
+                    }
+                } else if(randEnemy == 3){
+                    if(enemyDotsedhot.life != 0){
+                        isFinish = false;
+                        break;
+                    }
+                } else if(randEnemy == 4){
+                    if(enemyShappider.life != 0){
+                        isFinish = false;
+                        break;
+                    }
+                }
+            } while(isFinish);
+
+            if(randEnemy == 0){
+                runGame(player, enemyKangsihir, scanI, rand);
+                if(player.life == 0){
+                    isLose = true;
+                    break;
+                } else {
+                    player.life = 3;
+                    ctr++;
+                }
+            } else if(randEnemy == 1){
+                runGame(player, enemyMaklampir, scanI, rand);
+                if(player.life == 0){
+                    isLose = true;
+                    break;
+                } else {
+                    player.life = 3;
+                    ctr++;
+                }
+            } else if(randEnemy == 2){
+                runGame(player, enemyAingmaung, scanI, rand);
+                if(player.life == 0){
+                    isLose = true;
+                    break;
+                } else {
+                    player.life = 3;
+                    ctr++;
+                }
+            } else if(randEnemy == 3){
+                runGame(player, enemyDotsedhot, scanI, rand);
+                if(player.life == 0){
+                    isLose = true;
+                    break;
+                } else {
+                    player.life = 3;
+                    ctr++;
+                }
+            } else if(randEnemy == 4){
+                runGame(player, enemyShappider, scanI, rand);
+                if(player.life == 0){
+                    isLose = true;
+                    break;
+                } else {
+                    player.life = 3;
+                    ctr++;
+                }
+            }
+            if(ctr == 5){
+                isWin = true;
+                break;
+            }
+        } while(!isLose && !isWin);
+        if(isLose){
+            System.out.println("You Lose !!!");
+        } else {
+            System.out.println("Anda adalah ksatria terkuat di muka bumi ini !!!");
+        }
     }
 }

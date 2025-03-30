@@ -1,5 +1,5 @@
 public class Kangsihir extends Enemy {
-    String sprite = 
+    String sprite =
     "	/ \\\n" +
     "	|	|\n" +
     "	--:'''':--\n" +
@@ -8,10 +8,12 @@ public class Kangsihir extends Enemy {
     "  ' '		.' :::	'._\n"
     + " .*====<<=)	\\	:\n " +
     "  . '	'-'-'\\_	/'._.'\n"
-    + "	\\====:_\"\"\n" +
+    +
+    "	\\====:_\"\"\n" +
     "	.'	\\\\\n" +
     "	:	:\n" +
     "	/  :	\\\n";
+    
     
     
     public Kangsihir(){
