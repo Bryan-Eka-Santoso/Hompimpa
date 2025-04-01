@@ -18,7 +18,8 @@ public class App {
         enemy.startDialog();
 
         do {
-            int getRandom = rand.nextInt(3) + 1;
+            // int getRandom = rand.nextInt(3) + 1;
+            int getRandom = 2;
             printSprite(player, enemy);
             System.out.println("==================================================");
             System.out.printf("| %-21s | %-22s |\n", player.nama, enemy.nama);
